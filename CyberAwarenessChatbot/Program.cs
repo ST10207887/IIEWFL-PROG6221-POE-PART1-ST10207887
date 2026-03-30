@@ -7,33 +7,38 @@ namespace CyberAwarenessChatbot
     {
         static void Main(string[] args)
         {
-
+           
             try
             {
-                SoundPlayer player = new SoundPlayer("greeting.wav");
-                player.PlaySync(); 
+                SoundPlayer player = new SoundPlayer("Assets/Assets.wav");
+                player.PlaySync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Could not play greeting audio. Error: " + ex.Message);
             }
 
-           
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("=======================================");
-            Console.WriteLine("   CYBERSECURITY AWARENESS CHATBOT     ");
-            Console.WriteLine("=======================================");
+        
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("   ██████╗   █████╗   ██████╗ ");
+            Console.WriteLine("  ██╔═══██╗ ██╔══██╗ ██╔═══██╗");
+            Console.WriteLine("  ██║   ██║ ███████║ ██║   ██║");
+            Console.WriteLine("  ██║   ██║ ██╔══██║ ██║   ██║");
+            Console.WriteLine("  ╚██████╔╝ ██║  ██║ ╚██████╔╝");
+            Console.WriteLine("   ╚═════╝  ╚═╝  ╚═╝  ╚═════╝ ");
+            Console.WriteLine("             CAC              ");
+            Console.WriteLine("   CYBERSECURITY AWARENESS CHATBOT   ");
             Console.ResetColor();
 
-     
-            Console.Write("Please enter your name: ");
+           
+            Console.Write("\nPlease enter your name: ");
             string userName = Console.ReadLine();
 
-          
-            Console.WriteLine($"Hello {userName}, welcome to the Cybersecurity Awareness Bot!");
+           
+            Console.WriteLine($"\nHello {userName}, welcome to the Cybersecurity Awareness Bot!");
             Console.WriteLine("I’m here to help you stay safe online.");
 
-          
+         
             Console.WriteLine("\nType a question (or 'exit' to quit):");
             string input;
             do
