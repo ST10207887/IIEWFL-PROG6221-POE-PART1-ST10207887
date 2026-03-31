@@ -1,10 +1,23 @@
 ﻿using System;
 using System.Media;
+using System.Threading;
 
 namespace CyberAwarenessChatbot
 {
     class Program
     {
+        static void TypeWriter(string message, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            foreach (char c in message)
+            {
+                Console.Write(c);
+                Thread.Sleep(30);
+            }
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             try
@@ -14,7 +27,7 @@ namespace CyberAwarenessChatbot
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Could not play greeting audio. Error: " + ex.Message);
+                TypeWriter("Could not play greeting audio. Error: " + ex.Message, ConsoleColor.Red);
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -28,13 +41,17 @@ namespace CyberAwarenessChatbot
             Console.WriteLine("   CYBERSECURITY AWARENESS CHATBOT   ");
             Console.ResetColor();
 
+
             Console.Write("\nPlease enter your name: ");
             string userName = Console.ReadLine();
 
-            Console.WriteLine($"\nHello {userName}, welcome to the Cybersecurity Awareness Bot!");
-            Console.WriteLine("I’m here to help you stay safe online.");
+            TypeWriter($"\nHello {userName}, welcome to the Cybersecurity Awareness Bot!", ConsoleColor.Cyan);
+            TypeWriter("I’m here to help you stay safe online.", ConsoleColor.Cyan);
 
-            Console.WriteLine("\nType a question (or 'exit' to quit):");
+            Console.WriteLine("\n---------------------------------------");
+            TypeWriter("Type a question (or 'exit' to quit):", ConsoleColor.Yellow);
+            Console.WriteLine("---------------------------------------");
+
             string input;
             do
             {
@@ -42,39 +59,39 @@ namespace CyberAwarenessChatbot
 
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine($"I didn’t quite understand that, {userName}. Could you rephrase?");
+                    TypeWriter($"I didn’t quite understand that, {userName}. Could you rephrase?", ConsoleColor.Red);
                 }
                 else if (input.ToLower() == "how are you?")
                 {
-                    Console.WriteLine($"I’m functioning perfectly, thank you for asking, {userName}!");
+                    TypeWriter($"I’m functioning perfectly, thank you for asking, {userName}!", ConsoleColor.Green);
                 }
                 else if (input.ToLower() == "what’s your purpose?" || input.ToLower() == "what is your purpose?")
                 {
-                    Console.WriteLine($"My purpose is to teach you about cybersecurity awareness, {userName}.");
+                    TypeWriter($"My purpose is to teach you about cybersecurity awareness, {userName}.", ConsoleColor.Green);
                 }
                 else if (input.ToLower() == "what can i ask you about?")
                 {
-                    Console.WriteLine($"You can ask me about phishing, strong passwords, suspicious links, and safe browsing tips, {userName}.");
+                    TypeWriter($"You can ask me about phishing, strong passwords, suspicious links, and safe browsing tips, {userName}.", ConsoleColor.Cyan);
                 }
                 else if (input.ToLower() == "tell me about phishing")
                 {
-                    Console.WriteLine($"Phishing is when attackers trick you into giving personal information by pretending to be trustworthy. Always check links and sender details carefully, {userName}.");
+                    TypeWriter($"Phishing is when attackers trick you into giving personal information by pretending to be trustworthy. Always check links and sender details carefully, {userName}.", ConsoleColor.Yellow);
                 }
                 else if (input.ToLower() == "how do i make strong passwords?")
                 {
-                    Console.WriteLine($"Use at least 12 characters, mix uppercase, lowercase, numbers, and symbols. Avoid personal info like birthdays, {userName}.");
+                    TypeWriter($"Use at least 12 characters, mix uppercase, lowercase, numbers, and symbols. Avoid personal info like birthdays, {userName}.", ConsoleColor.Yellow);
                 }
                 else if (input.ToLower() == "tips for safe browsing")
                 {
-                    Console.WriteLine($"Keep your browser updated, avoid clicking unknown links, and use secure websites with HTTPS, {userName}.");
+                    TypeWriter($"Keep your browser updated, avoid clicking unknown links, and use secure websites with HTTPS, {userName}.", ConsoleColor.Yellow);
                 }
                 else if (input.ToLower() == "exit")
                 {
-                    Console.WriteLine($"Goodbye {userName}! Stay safe online.");
+                    TypeWriter($"Goodbye {userName}! Stay safe online.", ConsoleColor.Green);
                 }
                 else
                 {
-                    Console.WriteLine($"I didn’t quite understand that, {userName}. Could you rephrase?");
+                    TypeWriter($"I didn’t quite understand that, {userName}. Could you rephrase?", ConsoleColor.Red);
                 }
 
             } while (input.ToLower() != "exit");
