@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,10 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Assets.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.3.0" />
     <PackageReference Include="System.Windows.Extensions" Version="10.0.5" />
   </ItemGroup>
 

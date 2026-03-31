@@ -1,6 +1,8 @@
 ﻿using System;
-using System.Media;
+using System.IO;
 using System.Threading;
+using NAudio.Wave;
+
 
 namespace CyberAwarenessChatbot
 {
@@ -21,14 +23,31 @@ namespace CyberAwarenessChatbot
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("Assets/Assets.wav");
-                player.PlaySync();
+                string audioPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Assets.wav");
+
+                if (File.Exists(audioPath))
+                {
+                    var audioFile = new AudioFileReader(audioPath);
+                    var outputDevice = new WaveOutEvent();
+
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+
+                    Console.WriteLine("Playing greeting audio...");
+                  
+                }
+                else
+                {
+                    Console.WriteLine("Audio file not found at: " + audioPath);
+                }
             }
             catch (Exception ex)
             {
-                TypeWriter("Could not play greeting audio. Error: " + ex.Message, ConsoleColor.Red);
+                Console.WriteLine("Could not play greeting audio. Error: " + ex.Message);
             }
         }
+
+
 
         private void ShowLogo()
         {

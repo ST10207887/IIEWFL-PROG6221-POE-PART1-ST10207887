@@ -1,0 +1,7 @@
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\bin\Debug\CyberAwarenessChatbot.exe.config
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\bin\Debug\CyberAwarenessChatbot.exe
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\bin\Debug\CyberAwarenessChatbot.pdb
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\obj\Debug\CyberAwarenessChatbot.csproj.AssemblyReference.cache
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\obj\Debug\CyberAwarenessChatbot.csproj.CoreCompileInputs.cache
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\obj\Debug\CyberAwarenessChatbot.exe
+C:\Users\vuyim\visualstudio\CyberAwarenessChatbot\CyberAwarenessChatbot\obj\Debug\CyberAwarenessChatbot.pdb
